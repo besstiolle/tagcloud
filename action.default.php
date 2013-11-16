@@ -136,6 +136,6 @@ echo $this->ProcessTemplateFromDatabase($template);
 $time = microtime();
 $stop = explode(" ",$time);
 $diff = ($stop[1]-$start[1])+($stop[0]-$start[0]);
-echo "<strong>".$diff." seconds runtime</strong><br>\n";
+//echo "<strong>".$diff." seconds runtime</strong><br>\n";
 
 ?>
