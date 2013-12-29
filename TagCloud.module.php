@@ -1,7 +1,7 @@
 <?php
 
-define("TMPL_PREFIX_DISPLAY" , "display" );
-define("DEFAULT_DISPLAY_TMPL_PREF_NAME",'current_'.TMPL_PREFIX_DISPLAY.'_template');
+define("TC_TMPL_PREFIX_DISPLAY" , "display" );
+define("TC_DEFAULT_DISPLAY_TMPL_PREF_NAME",'current_'.TC_TMPL_PREFIX_DISPLAY.'_template');
 
 class TagCloud extends CGExtensions {
 
@@ -14,7 +14,7 @@ class TagCloud extends CGExtensions {
   }
 
   function GetVersion() {
-    return '1.0.0';
+    return '1.0.1';
   }
   
   function GetHelp() {

@@ -52,10 +52,10 @@ $smarty->assign(
 	$this->ShowTemplateList(
 		$id, 
 		$returnid, 
-		TMPL_PREFIX_DISPLAY, 
-		'default_'.TMPL_PREFIX_DISPLAY.'_template_contents',
+		TC_TMPL_PREFIX_DISPLAY, 
+		'default_'.TC_TMPL_PREFIX_DISPLAY.'_template_contents',
 		'template',
-		'current_'.TMPL_PREFIX_DISPLAY.'_template',
+		'current_'.TC_TMPL_PREFIX_DISPLAY.'_template',
 		$this->Lang('title_display'),
 		$this->Lang('text_display_edit'),
 		'defaultadmin'

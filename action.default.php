@@ -17,7 +17,7 @@ $number = $prefs["number"];
 $myReturnId = cmsms()->GetContentOperations()->GetDefaultPageID();
 $isLog = true;
 
-$template = !empty($params['template'])?TMPL_PREFIX_DISPLAY.$params['template']:TMPL_PREFIX_DISPLAY.$this->GetPreference(DEFAULT_DISPLAY_TMPL_PREF_NAME);
+$template = !empty($params['template'])?TC_TMPL_PREFIX_DISPLAY.$params['template']:TC_TMPL_PREFIX_DISPLAY.$this->GetPreference(TC_DEFAULT_DISPLAY_TMPL_PREF_NAME);
 
 //Override parameters
 if(!empty($params['number']) && cloud_utils::is_int($params['number'])){
