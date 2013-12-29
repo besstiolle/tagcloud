@@ -9,7 +9,7 @@ class cloud_utils{
 	protected function __construct() {}
 
 	
-	public function is_int($number){		
+	public static function is_int($number){		
 		return preg_match(cloud_utils::$number_pattern,$number);
 	}
 	
@@ -19,7 +19,7 @@ class cloud_utils{
 	 * @return the default configuration
 	 *
 	 **/
-	function getDefaultPrefs(){
+	public static function getDefaultPrefs(){
 		$prefs = array();
 		$prefs["allowed"] = array();
 		$prefs["denied"] =  array('`^.{0,1}$`', 								// string with 0-1 caracters
@@ -45,7 +45,7 @@ class cloud_utils{
 	 * @return 0 if equals, -1 if $a < $b, +1 else.
 	 *
 	 **/
-	function sorting($a, $b){
+	public static function sorting($a, $b){
 		if ($a['md5'] == $b['md5']) {
 			return 0;
 		}
@@ -61,7 +61,7 @@ class cloud_utils{
 	 * @param int $x value for the function
 	 * @return int linear fontsize
 	 */
-	function linear_function($m, $n, $x) {
+	public static function linear_function($m, $n, $x) {
 		return str_replace(",",".",($m * $x + $n));
 	}
 
@@ -73,7 +73,7 @@ class cloud_utils{
 	 * @param int $x value for the function
 	 * @return int logarithmical fontsize
 	 */
-	function logarithmical_function($m, $n, $x) {
+	public static function logarithmical_function($m, $n, $x) {
 		return str_replace(",",".",($m * log($x) + $n));
 	}
 	
@@ -87,7 +87,7 @@ class cloud_utils{
 	 *
 	 * @return the color value picked
 	 */
-	function getColor($colors, $min_px, $max_px, $val){
+	public static function getColor($colors, $min_px, $max_px, $val){
 	   $cpt = count($colors);
 	   $delta = $max_px - $min_px;
 	   $step = $delta / $cpt;
@@ -110,7 +110,7 @@ class cloud_utils{
 	 * @return an array : the name of the function, the $m value, the $n value
 	 *
 	 **/
-	function getFunction($items, $min_px, $max_px, $isLOG = true){
+	public static function getFunction($items, $min_px, $max_px, $isLOG = true){
 		//retrieve max_weight and min_weight
 		//due to the order of the sql query they are in the first and last item of $index_rows
 		$max_weight = $items[0]['count'];
@@ -158,7 +158,7 @@ class cloud_utils{
 		return array($function, $m, $n);
 	}
 	
-	function getCacheDirname(){
+	public static function getCacheDirname(){
 		$config = cmsms()->getConfig();
 		$cache_name = $config['root_path']."/tmp/cache/tagcloud";
 		if(!is_dir($cache_name) && !mkdir($cache_name, 0755)){
@@ -168,7 +168,7 @@ class cloud_utils{
 		return $cache_name;
 	}
 	
-	function clearCache(){
+	public static function clearCache(){
 		$dirname = cloud_utils::getCacheDirname();
 		
 		cloud_utils::rrmdir($dirname);
@@ -179,7 +179,7 @@ class cloud_utils{
 		}*/
 	}
 	
-	function rrmdir($dir) {
+	public static function rrmdir($dir) {
 		if (is_dir($dir)) {
 		 $objects = scandir($dir);
 		 foreach ($objects as $object) {
