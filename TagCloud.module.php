@@ -14,7 +14,7 @@ class TagCloud extends CGExtensions {
   }
 
   function GetVersion() {
-    return '1.0.1';
+    return '1.0.2';
   }
   
   function GetHelp() {
